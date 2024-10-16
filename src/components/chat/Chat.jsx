@@ -156,19 +156,7 @@ const Chat = () => {
         <div ref={endRef}></div>
       </div>
       <div className="bottom">
-        <div className="icons">
-          <label htmlFor="file">
-            <img src="./img.png" alt="" />
-          </label>
-          <input
-            type="file"
-            id="file"
-            style={{ display: "none" }}
-            onChange={handleImg}
-          />
-          <img src="./camera.png" alt="" />
-          <img src="./mic.png" alt="" />
-        </div>
+     
         <input
           type="text"
           placeholder={
@@ -177,6 +165,11 @@ const Chat = () => {
               : "Type a message..."
           }
           value={text}
+          onKeyDown={(e)=>{
+            if(e.key === 'Enter'){
+              handleSend()
+            }
+          }}
           onChange={(e) => setText(e.target.value)}
           disabled={isCurrentUserBlocked || isReceiverBlocked}
         />
@@ -189,14 +182,16 @@ const Chat = () => {
           <div className="picker">
             <EmojiPicker open={open} onEmojiClick={handleEmoji} />
           </div>
+
         </div>
-        <button
+          <button
           className="sendButton"
           onClick={handleSend}
           disabled={isCurrentUserBlocked || isReceiverBlocked}
         >
-          Send
+         <img src="./dm.png" alt="" />
         </button>
+      
       </div>
     </div>
   );

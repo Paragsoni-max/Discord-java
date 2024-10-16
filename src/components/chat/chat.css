@@ -72,7 +72,7 @@
 
         .texts {
           p {
-            background-color: #5183fe;
+            background-color: #ff00008f;
           }
         }
       }
@@ -97,13 +97,13 @@
         }
 
         p {
-          padding: 20px;
-          background-color: rgba(17, 25, 40, 0.3);
-          border-radius: 10px;
+          padding: 10px 25px 10px 15px;
+          font-size: 15px;
+          background-color: #00ff228f;
+          border-radius: 5px;
         }
-
         span {
-          font-size: 13px;
+          font-size: 10px;
         }
       }
     }
@@ -115,7 +115,7 @@
     align-items: center;
     justify-content: space-between;
     border-top: 1px solid #dddddd35;
-    gap: 20px;
+    gap: 10px;
     margin-top: auto;
 
     .icons {
@@ -135,9 +135,15 @@
       border: none;
       outline: none;
       color: white;
-      padding: 20px;
+      padding:15px 50px 15px 20px;
       border-radius: 10px;
       font-size: 16px;
+
+      &::placeholder{
+        color: rgba(255, 255, 255, 0.575);
+        font-weight: 300;
+        
+      }
 
       &:disabled {
         cursor: not-allowed;
@@ -146,7 +152,10 @@
 
     .emoji {
       position: relative;
-
+      display: flex;
+      gap: 2;
+      right: 50px;
+      align-items: center;
       .picker {
         position: absolute;
         bottom: 50px;
@@ -155,12 +164,17 @@
     }
 
     .sendButton {
-      background-color: #5183fe;
+      background-color: transparent;
       color: white;
-      padding: 10px 20px;
       border: none;
       border-radius: 5px;
       cursor: pointer;
+position: relative;
+right: 20px;
+      img{
+        width: 40px;
+        height: 40px;
+      }
 
       &:disabled {
         background-color: #5182feb4;

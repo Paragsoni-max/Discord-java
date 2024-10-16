@@ -15,7 +15,8 @@ const Login = () => {
     url: "",
   });
 
-  const [loading, setLoading] = useState(false);
+  const [loadingRegister, setLoadingRegister] = useState(false);
+  const [loadingLogin, setLoadingLogin] = useState(false);
 
   const handleAvatar = (e) => {
     if (e.target.files[0]) {
@@ -28,7 +29,7 @@ const Login = () => {
 
   const handleRegister = async (e) => {
     e.preventDefault();
-    setLoading(true);
+    setLoadingRegister(true);
     const formData = new FormData(e.target);
 
     const { username, email, password } = Object.fromEntries(formData);
@@ -68,13 +69,13 @@ const Login = () => {
       console.log(err);
       toast.error(err.message);
     } finally {
-      setLoading(false);
+      setLoadingRegister(false);
     }
   };
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    setLoading(true);
+    setLoadingLogin(true);
 
     const formData = new FormData(e.target);
     const { email, password } = Object.fromEntries(formData);
@@ -86,7 +87,7 @@ const Login = () => {
       console.log(err);
       toast.error(err.message);
     } finally {
-      setLoading(false);
+      setLoadingLogin(false);
     }
   };
 
@@ -97,7 +98,7 @@ const Login = () => {
         <form onSubmit={handleLogin}>
           <input type="text" placeholder="Email" name="email" />
           <input type="password" placeholder="Password" name="password" />
-          <button disabled={loading}>{loading ? "Loading" : "Sign In"}</button>
+          <button disabled={loadingLogin}>{loadingLogin ? "Loading" : "Sign In"}</button>
         </form>
       </div>
       <div className="separator"></div>
@@ -117,7 +118,7 @@ const Login = () => {
           <input type="text" placeholder="Username" name="username" />
           <input type="text" placeholder="Email" name="email" />
           <input type="password" placeholder="Password" name="password" />
-          <button disabled={loading}>{loading ? "Loading" : "Sign Up"}</button>
+          <button disabled={loadingRegister}>{loadingRegister ? "Loading" : "Sign Up"}</button>
         </form>
       </div>
     </div>
