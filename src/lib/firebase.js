@@ -4,7 +4,7 @@ import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDQW7Ue3m4Amx9VX-I2fEKrChN_wUNpyoE",
+  apiKey: import.meta.env.VITE_API_KEY,
   authDomain: "discord-java-fcd1e.firebaseapp.com",
   projectId: "discord-java-fcd1e",
   storageBucket: "discord-java-fcd1e.appspot.com",
