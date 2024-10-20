@@ -40,7 +40,7 @@ const Chat = () => {
       const unSub = onSnapshot(doc(db, "chats", chatId), (res) => {
         setChat(res.data());
       });
-  
+
       return () => {
         unSub();
       };
@@ -122,7 +122,6 @@ const Chat = () => {
           <img src={user?.avatar || "./avatar.png"} alt="" />
           <div className="texts">
             <span>{user?.username}</span>
-            <p>Lorem ipsum dolor, sit amet.</p>
           </div>
         </div>
         <div className="icons">
@@ -156,7 +155,7 @@ const Chat = () => {
         <div ref={endRef}></div>
       </div>
       <div className="bottom">
-     
+
         <input
           type="text"
           placeholder={
@@ -165,8 +164,8 @@ const Chat = () => {
               : "Type a message..."
           }
           value={text}
-          onKeyDown={(e)=>{
-            if(e.key === 'Enter'){
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
               handleSend()
             }
           }}
@@ -184,14 +183,14 @@ const Chat = () => {
           </div>
 
         </div>
-          <button
+        <button
           className="sendButton"
           onClick={handleSend}
           disabled={isCurrentUserBlocked || isReceiverBlocked}
         >
-         <img src="./dm.png" alt="" />
+          <img src="./dm.png" alt="" />
         </button>
-      
+
       </div>
     </div>
   );

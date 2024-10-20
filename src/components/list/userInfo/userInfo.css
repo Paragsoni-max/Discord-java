@@ -18,13 +18,19 @@
   }
 
   .icons {
-    display: flex;
+    display: non;
     gap: 20px;
 
     img {
       width: 20px;
       height: 20px;
       cursor: pointer;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .icons {
+      display: none;
     }
   }
 }

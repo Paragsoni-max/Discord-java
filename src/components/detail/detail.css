@@ -80,6 +80,7 @@
         }
       }
     }
+
     button {
       padding: 15px;
       background-color: rgba(230, 74, 105, 0.553);
@@ -92,10 +93,16 @@
         background-color: rgba(220, 20, 60, 0.796);
       }
 
-      &.logout{
+      &.logout {
         padding: 10px;
         background-color: #1a73e8;
       }
+    }
+  }
+
+  @media (max-width: 900px) {
+    .user {
+      flex-direction: row;
     }
   }
 }
