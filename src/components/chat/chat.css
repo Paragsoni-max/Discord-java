@@ -74,6 +74,9 @@
         .texts {
           p {
             background-color: #ff00008f;
+            text-wrap: wrap;
+            word-break: break-word;
+            overflow-wrap: break-word;
           }
         }
       }
@@ -103,6 +106,8 @@
           font-size: 15px;
           background-color: #00ff228f;
           border-radius: 5px;
+          word-break: break-word;
+          overflow-wrap: break-word;
         }
 
         span {
@@ -188,10 +193,14 @@
     }
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 1000px) {
     .center{
-      height: 400px;
+      height: 500px;
       flex: none;
+
+      .message{
+        max-width: 90%;
+      }
     }
     input {
       width: 20px;

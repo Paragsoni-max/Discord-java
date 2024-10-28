@@ -68,6 +68,8 @@
       p {
         font-size: 14px;
         font-weight: 300;
+        word-break: break-word;
+        overflow-wrap: break-word;
       }
     }
   }
